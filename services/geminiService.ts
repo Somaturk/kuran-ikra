@@ -3,7 +3,17 @@ import { GoogleGenAI, Type, Schema } from "@google/genai";
 import { PresentationData, GlobalSearchResult } from "../types";
 import { ENABLE_DEVELOPER_TOOLS } from '../constants';
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+let aiInstance: GoogleGenAI | null = null;
+const getAI = (): GoogleGenAI => {
+  if (!aiInstance) {
+    const key = process.env.API_KEY || process.env.GEMINI_API_KEY;
+    if (!key) {
+      throw new Error("Gemini API key is not configured. Please set GEMINI_API_KEY in environment variables.");
+    }
+    aiInstance = new GoogleGenAI({ apiKey: key });
+  }
+  return aiInstance;
+};
 
 const wordAnalysisSchema: Schema = {
   type: Type.OBJECT,
@@ -131,7 +141,7 @@ export const fetchSurahAnalysis = async (surahName: string, segment?: string, on
   return generateWithRetry(async () => {
     try {
       // STREAMING REQUEST
-      const result = await ai.models.generateContentStream({
+      const result = await getAI().models.generateContentStream({
         model: 'gemini-2.5-flash',
         contents: prompt,
         config: {
@@ -198,7 +208,7 @@ export const searchQuranWithAI = async (query: string): Promise<GlobalSearchResu
 
   return generateWithRetry(async () => {
     try {
-      const result = await ai.models.generateContent({
+      const result = await getAI().models.generateContent({
         model: 'gemini-2.5-flash',
         contents: prompt,
         config: {
