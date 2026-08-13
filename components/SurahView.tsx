@@ -29,7 +29,7 @@ const LazyVerse = ({ verse, onClick, isActive, isRead, surahId }: { verse: Verse
     }, [isActive]);
 
     return (
-        <div ref={ref} className="min-h-[180px]">
+        <div ref={ref} id={`verse-${verse.verseNumber}`} className="min-h-[180px]">
             {isVisible ? (
                 <VerseItem verse={verse} onClick={onClick} isRead={isRead} surahId={surahId} />
             ) : (
@@ -345,7 +345,7 @@ export const SurahView: React.FC<SurahViewProps> = ({
                             <LazyVerse
                                 key={verse.verseNumber}
                                 verse={verse}
-                                isActive={false /* We might pass true if it's the target verse, but scrollIntoView handles standard focus */}
+                                isActive={selectedVerseIndex === idx}
                                 onClick={() => handleVerseClick(idx)}
                                 isRead={isRead(surah.id, verse.verseNumber)}
                                 surahId={surah.id}
@@ -382,7 +382,7 @@ const TabButton = ({ active, onClick, label, disabled }: { active: boolean, onCl
 
 const VerseItem = ({ verse, onClick, isRead, surahId }: { verse: VerseAnalysis, onClick: () => void, isRead: boolean, surahId: number }) => {
     return (
-        <div id={`verse-${verse.verseNumber}`} onClick={onClick} className="py-8 px-4 md:px-8 hover:bg-slate-50 dark:hover:bg-slate-900/50 transition-colors group cursor-pointer relative">
+        <div onClick={onClick} className="py-8 px-4 md:px-8 hover:bg-slate-50 dark:hover:bg-slate-900/50 transition-colors group cursor-pointer relative">
             <div className="flex items-start gap-4 mb-4">
                 <span className={`inline-flex items-center justify-center w-8 h-8 rounded-full text-xs font-mono font-bold border shadow-sm shrink-0 mt-1 transition-colors ${isRead
                     ? 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-500 border-emerald-200 dark:border-emerald-700'
