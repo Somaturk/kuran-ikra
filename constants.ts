@@ -1,5 +1,5 @@
 
-export const ENABLE_DEVELOPER_TOOLS = true; // YAYINA ALIRKEN 'false', VERİ ÜRETİRKEN 'true' YAPIN
+export const ENABLE_DEVELOPER_TOOLS = false; // YAYINA ALIRKEN 'false', VERİ ÜRETİRKEN 'true' YAPIN
 
 // Start Verse for each Juz (1-30)
 // Format: [SurahID, VerseID]
