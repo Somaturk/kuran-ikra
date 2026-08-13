@@ -1,0 +1,34 @@
+{
+  "name": "Kuran Derin Analiz",
+  "short_name": "Kuran Analiz",
+  "description": "Kuran-ı Kerim ayetlerinin kelime kökenleri ve tefsir analizi.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "orientation": "portrait",
+  "categories": ["education", "books", "reference"],
+  "icons": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48Y2lyY2xlIGN4PSIyNTYiIGN5PSIyNTYiIHI9IjI1NiIgZmlsbD0iIzBmMTcyYSIvPjxjaXJjbGUgY3g9IjI1NiIgY3k9IjI1NiIgcj0iMjIwIiBmaWxsPSJub25lIiBzdHJva2U9IiM3ODVjMzIiIHN0cm9rZS13aWR0aD0iMjQiLz48Y2lyY2xlIGN4PSIyNTYiIGN5PSIyNTYiIHI9IjE4MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMGY3NjZlIiBzdHJva2Utd2lkdGg9IjEyIi8+PHRleHQgeD0iMTkwIiB5PSIzMjAiIGZvbnQtZmFtaWx5PSJzZXJpZiIgZm9udC1zaXplPSIxOTAiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjZmVhNTAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7ZgtinPC90ZXh0Pjx0ZXh0IHg9IjM2MCIgeT0iMzIwIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTcwIiBmaWxsPSIjZmVhNTAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5SQTwvdGV4dD48L3N2Zz4=",
+      "type": "image/svg+xml",
+      "sizes": "192x192 512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+       "src": "https://placehold.co/1080x1920/0f172a/fea500.png?text=Kuran+Analiz+App",
+       "sizes": "1080x1920",
+       "type": "image/png",
+       "form_factor": "narrow"
+    },
+    {
+       "src": "https://placehold.co/1920x1080/0f172a/fea500.png?text=Kuran+Analiz+Desktop",
+       "sizes": "1920x1080",
+       "type": "image/png",
+       "form_factor": "wide"
+    }
+  ]
+}
